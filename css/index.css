@@ -1,0 +1,808 @@
+/*全局*/
+*{
+	margin: 0;
+	padding: 0;
+    }
+ul{list-style: none;}
+a{text-decoration: none;}
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both;
+}
+.hide{display: none;}
+.show{display: block;}
+.icon{
+	display: inline-block;
+	background-image: url(../img/spirit.png);
+	background-repeat: no-repeat;
+	}
+.mask{
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.8;
+	filter: alpha(opacity=70);
+}
+
+/*.container{
+	width: 1206px;
+  	margin: 0 auto;
+}*/
+/*             登录页面                 */
+/*登陆页面动画*/
+.animate-in{
+	 -webkit-animation:500ms change linear;
+}
+.animate-out{
+	 -webkit-animation:500ms changeout linear;
+}
+@keyframes change{
+	0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes changeout{
+	0%{
+        transform: scaleX(1);
+    }
+    50%{
+        transform: scaleX(0.5);
+    }
+    100%{
+        transform: scaleX(0);
+    }
+}
+
+.login-bg{
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 999;
+	}
+.login{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 388px;
+  	height: 288px;
+  	margin-top: -144px;
+  	margin-left: -194px;
+  	background-color: #fff;
+  	}
+.login span{
+	display: block;
+	position: absolute;
+	right: 8px;
+	top: 10px;
+	width: 10px;
+	height: 10px;
+	background-position: -18px -10px;
+	cursor: pointer;
+	}
+.login-the{
+	padding: 25px 40px 10px;
+	line-height: 28px;
+	font: bold 18px "microsoft yahei";
+	color: #444;
+	cursor: default;
+	}
+
+.login .alertText{
+	height: 20px;
+	margin: 5px 40px;
+	font: 14px "microsoft yahei";
+	color: red;
+}
+.login input,.login button{
+	display: block;
+	box-sizing: border-box;
+	width: 293px;
+	margin: 0 40px;
+	outline: none;
+}
+.login input{
+	height: 45px;
+	padding-left: 10px;
+	line-height: 43px;
+	border: 1px solid #dfdfdf;
+	box-shadow: inset 1px 1px 2px 1px #f1f1f1;
+	font-size: 16px;
+	background-color: #fafafa;
+	}
+
+.login input[type="text"]{
+	margin-bottom: 30px;
+}
+.login input[type="password"]{
+	margin-bottom: 0px;
+}
+.login button{
+	width: 293px;
+	height: 46px;
+	background-position: 0 -37px;
+}
+/*      顶部通知栏                */
+.header .top{
+	width: 100%;
+    min-width: 960px;
+    line-height: 36px;
+    height: 36px;
+    background-color: #f3f3f3;
+	}
+.header .top .topLeft{
+	float: left;
+	cursor: default;
+	}
+.topLeft span:nth-of-type(2){
+	color: #21A557;
+}
+.header .top .topLeft,.topRight{
+	line-height: 36px;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	}
+.header .top .topRight{
+	display: inline-block;
+	float: right;
+	color: #000;
+	cursor: pointer;
+	}
+.topRight i{
+	width: 9px;
+	height: 9px;
+	margin-right: 6px;
+	background-position: -284px -27px;
+}
+
+/*           网易教育产品部                            */
+.header .bottom{padding: 32px 0 33px;}
+.b-logo, .b-follow, .b-nav{
+	display: inline-block;
+	vertical-align: middle;
+	height: 25px;
+	line-height: 25px;
+	}
+.header .b-logo{
+	float: left;
+	margin-right: 30px;
+	cursor: default;
+	}
+.header .b-logo span{
+	display: inline-block;
+	float: left;
+	font-size: 22px;
+	}
+.b-logo .englishName{
+	float: left;
+	width: 70px;
+	height: 19px;
+	margin-top: 5px;
+	margin-right: 13px;
+	background-position: -223px -3px;
+	}
+/*             网易教育产品部   关注                 */
+.header .b-follow .focus{
+	display: inline-block;
+	height: 21px;
+	width: 54px;
+	line-height: 22px;
+	border: none;
+	border-radius: 3px;
+	background-color: #21a557;
+	color: #fff;
+	font-size: 12px;
+	cursor: default;
+	}
+
+.header .b-follow .focus:hover{background-color: #2fb556;}
+/*             已关注                      */
+.header .b-follow .focused{
+	display: none;
+	width: 104px;
+  	border: 1px solid #efefef;
+  	line-height: 20px;
+  	background-color: #f8f8f8;
+  	font-size: 12px;
+  	border-radius: 2px;
+  	margin: 32px 0 0 10px;
+  	}
+.header .b-follow .focused .focused-f{color: #333;}
+.header .b-follow .focused:hover{background-color: #fff;}
+.header .b-follow .focused .focused-cancel{
+	display: inline-block;
+	border-left: 1px solid #efefef;
+  	padding-left: 8px;
+  	margin-left: 8px;
+  	line-height: 12px;
+  	color: #999999;
+}
+.header .b-follow .focused .focused-cancel:hover{
+	text-decoration: underline;
+	color: #21a557;
+	}
+/*               网易教育产品部  粉丝             */
+.header .b-follow .fans{padding-left: 14px;}
+.header .b-follow .fansNum{padding-left: 7px;}
+.header .b-follow .fansNum,.fans{
+	font-family: simsun;
+	font-size: 12px;
+	color: #666;
+	cursor: default;
+	}
+/*               网易教育产品部  右侧部分            */
+.header .b-nav{
+	position: relative;
+	}
+.header .b-nav,.b-nav li{float: right;}
+.b-nav  li  a{
+	vertical-align: middle;
+	font-size:14px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	color: #666666;
+	}
+.b-nav  li a:hover{color: #39A030;}
+.b-nav li:nth-of-type(1){
+	position: absolute;
+	top: 2px;
+	right: 0px;
+	}
+.b-nav li:nth-of-type(1) .icon-search{
+	height: 18px;
+	width: 18px;	
+	background-position: 0px  0px;
+	}
+.b-nav li:nth-of-type(1) .icon-search:hover{
+	background-position: 0 -18px;
+}
+.b-nav li:nth-of-type(2),li:nth-of-type(3),li:nth-of-type(4){
+	padding-right: 50px;
+	}
+	/*           轮播图                        */
+.slidershow{position: relative;}
+.slidershow  .sliderPic{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+.slidershow .sliderPic li{
+	float: left;
+	display: none;
+	opacity: 0;
+	transition: all linear .5s;
+	}
+.slidershow .sliderPic li a{
+	display: inline-block;
+}
+.slidershow .sliderPic .img-cur{
+	display: block;
+	opacity: 1;
+}
+.slidershow .sliderPic a img{
+	display: block;
+	width: 100%;
+	}
+.slidershow .control{
+	position: absolute;
+	bottom:13px;
+	left:50% ;
+	margin-left: -10px;
+}
+.slidershow .control li{
+	float: left;
+	margin: 6px;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background-color: #fff;
+}
+.slidershow .control .span-cur{background-color: #000;}
+
+	/*           网易云课堂/云课堂/中国大学MOOC/了解更多                  */
+.product{
+	padding: 60px 0;
+	position: relative;
+	}
+.product .box{
+	display: inline-block;
+	width: 33%;
+	box-sizing: border-box;
+	padding: 0 20px;
+	position: relative;
+	}
+.product  .box i{
+	width: 80px;
+	height: 80px;
+	float: left;
+	margin: 10px 20px;
+}
+.product .box .publicClass{
+	background-position: -160px -83px;
+}
+.product  .box .cloudclass{
+	background-position: -80px -83px;
+}
+.product  .box .mooc{
+	background-position: 0  -83px;
+}
+.product .box dl{padding-left: 120px;}
+.product .box dl dt{
+	margin-bottom: 20px;
+	font-size: 21px;
+	font-family: "微软雅黑";
+	color: #333333;
+	cursor: default;
+	}
+.product .box dl dd:nth-of-type(1){
+	margin-bottom: 29px;
+	font-family:"微软雅黑";
+	font-size:14px;
+	line-height: 24px;
+	color: #666666;
+	cursor: default;
+	}
+.product .box dl dd a{
+	font-family:"微软雅黑";
+	font-size:14px;
+	color: #39A030;
+	}
+.product .box dl dd a:hover{text-decoration: underline;}
+
+/*        工作环境                  */
+.jobEnvironment{
+	max-width: 1620px;
+	height: 220px;
+	overflow: hidden;
+	}
+.jobEnvironment .picBox{
+	position: relative;
+	height: 220px;
+	
+}
+.jobEnvironment .picBox div{
+	position: absolute;
+	width: 1620px;
+}
+.jobEnvironment img{
+	display: inline-block;
+	float: left;
+	width: 320px;
+	height: 220px;
+	margin-right: 4px;
+	}
+/*.jobEnvironment img:nth-of-type(9){
+	margin-right: 0;
+}*/
+
+/*         主要内容 课程列表         */
+.mainContent{
+	padding: 80px 0 120px 0;;
+	background-color: #F8F8F8;
+	position: relative;
+}
+.mainContent .conLeft{
+	display: inline-block;
+  	position: relative;
+  	}
+.mainContent .conRight{
+	width: 225px;
+    float: right;
+  }
+.mainContent .content-tab{
+	display: block;
+  	padding: 0 0 30px 0;
+	cursor: pointer;
+	}
+.mainContent .content-tab li{
+	width: 200px;
+  	line-height: 50px;
+  	font-size: 20px;
+  	font-family: "微软雅黑";
+  	float: left;
+  	color: #666666;
+	background-color: #fff;
+	box-shadow: 1px 1px #D4D3D3;
+	text-align: center;
+	}
+ .mainContent .conLeft .z-cur{
+	color: #fff;
+	background-color: #39A030;
+	}
+.mainContent .program{
+	display: none;
+	}
+/* 每个课程  */
+.mainContent .courseList{
+	float: left;
+	}
+.mainContent .class li{
+	float: left;
+	display: block;
+	width:220.8px ;
+	height: 230px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding: 1px 0 0 1px;
+	box-shadow: 0px 0px 0px 1px #F1F1F1;
+	background-color: #fff;
+	position: relative;
+}
+.mainContent .class li:hover{
+	box-shadow: 0px 0px 0px 1px #E6E6E6;
+}
+
+.mainContent .class li img{
+	display: block;
+	width: 221px;
+	height: 123px;
+}
+.mainContent .class li h1{
+	margin:10px 0 11px 4px;
+	font-family: simsun;
+	font-size: 14px;
+	color: #333333;
+	line-height: 14px;
+	overflow: hidden;
+	word-wrap: normal;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	}
+.mainContent .class li h2{
+	margin:0 0 11px 4px;
+	font-family: simsun;
+	font-size: 12px;
+	color: #999;
+}
+.mainContent .class li .people{
+	max-width: 34px;
+	height: 16px;
+	margin:0 0 5px 4px;
+	padding-left:18px;
+	border-radius: 2px;
+	font-family: "微软雅黑";
+	font-size: 10px;
+	color: #999999;
+	position: relative;
+	line-height: 16px;
+	margin-left: 5px;
+	}
+.mainContent .class li .people i{
+	position: absolute;
+	top: 3px;
+	left: 1px;
+	width: 10px;
+	background-position: -38px -24px;
+	height: 10px;
+}
+.mainContent .class li .price{
+	font-family: "微软雅黑";
+	font-size: 12px;
+	color: #ff3f00;
+	margin-left: 4px;
+}
+.mainContent .class li:hover .courseDetails{
+	display: block;
+	}
+.mainContent .class li .courseDetails{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	width: 475px;
+	border:  1px solid #D2D2D2;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+.mainContent .class li .courseDetails .detailsTop{
+	height: 125px;
+	padding:20px;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.mainContent .class li .courseDetails .detailsTop img{
+	display: inline-block;
+	float: left;
+	width: 220px;
+	height: 120px;
+	margin-right: 20px;
+}
+.courseDetails .detailsTop .detailsRight{
+	width: 195px;
+	display: block;
+  	float: left;
+}
+.courseDetails .detailsTop .detailsRight .course-title{
+	line-height: 18px;
+	font-size: 18px;
+	font-family: "微软雅黑";
+	color: #666;
+	font-weight: bold;
+	margin-bottom: 22px;
+}
+.courseDetails .detailsTop  .learner{
+	line-height: 12px;
+	font-size: 12px;
+	font-family: "微软雅黑";
+	color: #999;
+	padding-left:18px ;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+ .detailsTop .detailsRight  .learner i{
+	position: absolute;
+	top: 0 ;
+	left: 3px;
+	width: 10px;
+	background-position: -38px -24px;
+	height: 10px;
+}
+.detailsTop .detailsRight  .publish,.classify{
+	line-height: 12px;
+	font-size: 12px;
+	font-family: "微软雅黑";
+	color: #999;
+	margin-bottom: 10px;
+}
+.courseDetails .detailsBottom{
+	padding: 20px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color: #656565;
+	line-height: 25px;
+	background-color: #F8F8F8;
+}
+/*    分页器           */
+.turnPage{
+	float: right;
+	margin-top: 30px;
+	color: #666;	
+}
+.turnPage .coursePage li,.turnPage .Page{
+	height: 20px;
+	float: left;
+	line-height: 20px;
+	text-align: center;
+}
+.turnPage .Page{
+	margin: 0 5px;
+	width: 30px;
+	background-color: #9dd8b1;
+	color: #fff;
+	cursor: pointer;
+}
+.turnPage .coursePage{
+	float: left;
+}
+.turnPage .coursePage li{
+	margin: 0 4px;
+	width: 20px;
+	font-size: 14px;
+	cursor: pointer;
+}
+.turnPage .coursePage li.x-cur{
+	color: #9dd8b1;
+}
+.turnPage .coursePage li:hover{
+	background-color: #9dd8b1;
+	color: #fff;
+	}
+	
+/*      视频介绍      */
+
+.Rheader{
+	width: 203px;
+	line-height: 55px;
+	padding-left:20px ;
+	background: #fff;
+	box-shadow: 0 1px 1px 1px #e6e6e6;
+	}
+.video{
+	width: 201px;
+	height: 167px;
+	padding: 6px 0  0  22px;
+	margin-bottom: 20px;
+	background-color: #fff;
+	box-shadow: 0 1px 1px 1px #e6e6e6;
+	font: 14px/32px 'Microsoft YaHei';color: #666;
+}
+.video img{
+	margin-top: 1px;
+}
+.popupVideo{
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 90;
+	width: 100%;
+	height: 100%;
+	}
+.popupVideo .play{
+	width: 950px;
+	background: #F8F8F8;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin: -310px 0 0 -475px;
+	}
+.play span{
+	display: block;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 10px;
+	height: 10px;
+	background-position: -18px -10px;
+	}	
+.play p{
+	height: 30px;
+	margin: 20px 30px 0;
+	font-weight: bold; 
+	font-size:18px; 
+	font-family:'Microsoft YaHei';
+	}
+.play video{margin: 0 30px 30px;}
+/*最热排行*/
+.hotRanking{
+	
+	width: 203px;
+	height:776px ;
+	padding-left: 20px;
+	background-color: #fff;
+	box-shadow: 0 1px 1px 1px #e6e6e6;
+	
+}
+.hotRanking .p_hot{
+	line-height: 56px;
+	}
+.line{
+	height: 1px;
+	width: 100%;
+	background-color:#ECEBEB ;
+}
+.hotRanking .roll{
+	width: 183px;
+	height: 700px;
+	padding:19px 20px 0 0 ;
+	position: relative;
+	overflow: hidden;
+	}
+.hotRanking .roll .rollbox{
+	position: absolute;
+	top: 19px;
+	height: 700px;
+}
+.hotRanking .rollbox a{
+	display: inline-block;
+	float: left;
+	height: 50px;
+	margin-bottom: 20px;
+	}
+.hotRanking .rollbox a img{
+	display: inline-block;
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin-right: 12px;
+	vertical-align: top;
+}
+.hotRanking .rollbox a p{
+	float: left;
+	width: 121px;
+    line-height: 14px;
+    margin-bottom: 13px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color: #333;
+	overflow: hidden;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    }
+.hotRanking .rollbox a span{
+    display: inline-block;
+    float: left;
+    padding-left: 18px;
+    border: none;
+    background-image: url(../img/spirit.png);
+    background-repeat: no-repeat;
+    background-position: -38px -24px;
+    line-height: 12px;
+    font-size: 12px;
+    font-family:'Microsoft YaHei';
+    color: #999;
+    }
+/*   footer      */
+.footer{background-color: #2C3339;}
+.m-ft{
+	width: 1100px;
+	height: 265px;
+	margin: auto;
+	}
+.m-ft>div{
+	float: left;
+	padding-top: 65px;
+	}
+.m-ft p, .m-ft span, .m-ft a{color: #A2A4A5;}
+.m-ft span, .m-ft a{
+	display: block;
+	line-height: 30px;
+	}
+.m-ft a{font-size: 15px;}
+.m-ft a:hover{text-decoration: underline;}
+.m-ft span{font-size: 13px;}
+.m-ft .info{
+	width: 540px;
+	height: 170px;
+	padding-top: 90px;
+	}
+.m-ft .info .icon{
+	padding-left: 81px;
+	margin-bottom: 24px;
+	background-position: -223px -3px;
+	 line-height: 22px;
+	font-size: 22px;
+	color: #39A030;
+	cursor: default;
+	}
+.m-ft .info p{
+	line-height: 25px;
+	font-size: 13px;
+	cursor: default;
+	}
+.m-ft .friend-link{width: 205px;}
+.m-ft .about, .m-ft .more{width: 107px;}
+.m-ft .about .icon{
+	width: 20px;
+	height: 16px;
+	margin-left: 4px;
+	background-position: -198px -17px;
+	}
+
+/*媒体查询*/
+
+@media screen and (min-width: 960px) {
+    .container {
+        width: 960px;
+        margin: 0 auto;
+    }
+ 	.conLeft{
+    	width: 735px;
+    }
+    .class {
+        width: 735px;
+        height: 1778px;
+    }
+}
+@media screen and (min-width: 1205px) {
+    .container {
+        width: 1206px;
+        margin: 0 auto;
+    }
+     .conLeft{
+    	width: 980px;
+    }
+    .class {
+        width: 980px;
+        height: 1270px;
+    } 
+
+}
